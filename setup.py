@@ -6,7 +6,7 @@ from models.template import Template
 connection = Connection(os.environ.get('MONGODB_URL'))
 db = connection[os.environ.get('MONGODB_DATABASE')]
 
-def seed():
+def seeds():
     '''Add seed data to the database'''
     connection.register([Template])
     template_header = connection.Template()
@@ -68,6 +68,10 @@ def seed():
     }
     template_footer.save()
 
+def delete():
+    db.templates.remove({})
+
 
 if __name__ == '__main__':
-    seed()
+    delete()
+    seeds()

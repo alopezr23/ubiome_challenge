@@ -1,8 +1,9 @@
+# -*- coding: utf-8 -*-
 from flask import Flask
 
 
 class App():
-    
+
     instance = None
 
     @staticmethod

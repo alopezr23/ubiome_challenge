@@ -1,5 +1,5 @@
 # Project Hermes
-This project is an internationalization solution for web applications.
+This project is an internationalization services for web applications.
 ## Prerequisites
 ### Python 2.7
 ##### Linux/UNIX
@@ -14,8 +14,6 @@ brew install python
 ```
 ### pip
 ##### Linux/UNIX
-The latest versions of CentOS, Fedora, Redhat Enterprise (RHEL) and Ubuntu come with Python 2.7 out of the box.
-To see which version of Python you have installed, open a command prompt and run
 ```
 apt-get update
 apt-get -y install python-pip
@@ -53,8 +51,40 @@ pip install --upgrade pip setuptools
 pip install -r requirements.txt
 ```
 ## Deployment
-Add additional notes about how to deploy this on a live system
-
+To start the project execute run.py
+```
+python run.py
+```
+To make a service request you need to specify the template and language through the GET method
+```
+curl <path>/templates/<template_name>/<lang>
+```
+For example
+```
+curl localhost:5000/templates/header/en
+```
+And response the following:
+```
+{
+  "fields": {},
+  "status": true
+}
+```
+Where "fields" are the fields that belong to the template and "status" indicates if it is answered correctly or if it has any errors.
+In case of error looks like this:
+```
+{
+  "error": 'Error message',
+  "status": false
+}
+```
+#### Seed
+En caso de querer datos de prueba ejecutar setup.py
+```
+python setup.py
+```
+##Testing
+ToDo
 ## Built With
 * [Flaks](http://flask.pocoo.org/docs/0.12/) - The web framework used
 * [MongoDB](https://docs.mongodb.com/) - The database used
