@@ -94,8 +94,7 @@ For create a test data run setup.py:
 ```
 python setup.py
 ```
-## Testing
-ToDo
+
 ## Built With
 * [Flaks](http://flask.pocoo.org/docs/0.12/) - The web framework used
 * [MongoDB](https://docs.mongodb.com/) - The database used
